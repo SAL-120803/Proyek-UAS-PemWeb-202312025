@@ -1,66 +1,101 @@
-## 📘 USAGE.md
+# 📖 Panduan Penggunaan Aplikasi Sistem Informasi Perpustakaan
 
-# Panduan Penggunaan
-
-Sistem Informasi Perpustakaan Berbasis Web
+Dokumen ini menjelaskan alur penggunaan aplikasi **PERPUSTAKAAN**, mulai dari login sebagai Admin atau Petugas, hingga mengelola data buku, anggota, sirkulasi, dan laporan.
 
 ---
 
-## 🧭 Navigasi Utama
+## 👥 Peran Pengguna (User Roles)
 
-* 📊 **Dashboard**
-
-  * Menampilkan ringkasan: jumlah buku, anggota, sirkulasi aktif, laporan sirkulasi.
-
-* 📁 **Kelola Data**
-
-  * **Data Buku**
-
-    * Tambah/edit/hapus buku
-    * Informasi: no, id buku, judul, pengarang, penerbit, tahun
-
-  * **Data Anggota**
-
-    * Tambah/edit/hapus anggota
-    * Informasi: no, id anggota, nama, jenis kelamin, kelas, no HP
-
-* 🔁 **Sirkulasi**
-
-  * Peminjaman, perpanjangan, pengembalian buku
-  * Data: no, id sirkulasi, buku, peminjam, tanggal pinjam, jatuh tempo, denda
-
-* 📜 **Log Data**
-
-  * Riwayat peminjaman dan pengembalian
-  * Info: no, buku, peminjam, tanggal pinjam/kembali
-
-* 📈 **Laporan**
-
-  * Laporan sirkulasi: id, buku, peminjam, tanggal pinjam/kembali, denda, total denda
-  * Bisa diekspor ke PDF
-
-* ⚙️ **Pengguna Sistem**
-
-  * Kelola akun admin/petugas
-  * Tambah, hapus, ubah pengguna
-
-* 🚪 **Logout**
-
-  * Keluar dari aplikasi
+| Role            | Deskripsi                                                                           |
+| --------------- | ----------------------------------------------------------------------------------- |
+| *Administrator* | Mengelola seluruh modul: buku, anggota, pengguna, transaksi sirkulasi, dan laporan. |
+| *Petugas*       | Mengelola data buku, anggota, dan melakukan transaksi peminjaman/pengembalian.      |
 
 ---
 
-## 🛠️ Fitur Tambahan
+## 🔐 Login
 
-* ✅ Notifikasi SweetAlert
-* 📱 Responsif dengan Bootstrap
-* 📊 Ikon dengan FontAwesome
-* 🔒 Validasi form login dan input data
+* Halaman Login: `login.php`
+* Masukkan username dan password sesuai data di `tb_pengguna`
+* Arahkan pengguna berdasarkan peran:
+
+  * **Admin** → `home/admin.php`
+  * **Petugas** → `home/petugas.php`
 
 ---
 
-## 💡 Tips Penggunaan
+## 📚 Alur Penggunaan: Admin & Petugas
 
-* Gunakan menu Pengguna Sistem untuk ubah password admin
-* Rutin cek Laporan dan Log Data
-* Backup database secara berkala
+### 1. Kelola Data Buku
+
+* Navigasi: `admin/buku/data_buku.php`
+* Aksi yang tersedia:
+
+  * Tambah buku → `add_buku.php`
+  * Edit buku → `edit_buku.php`
+  * Hapus buku → `del_buku.php`
+
+### 2. Kelola Data Anggota
+
+* Navigasi: `admin/agt/data_agt.php`
+* Aksi yang tersedia:
+
+  * Tambah anggota → `add_agt.php`
+  * Edit anggota → `edit_agt.php`
+  * Hapus anggota → `del_agt.php`
+  * Cetak kartu/daftar anggota → `print_agt.php`, `print_allagt.php`
+
+### 3. Transaksi Sirkulasi
+
+* Navigasi: `admin/sirkul/data_sirkul.php`
+* Aksi:
+
+  * Peminjaman buku → `add_sirkul.php`
+  * Perpanjangan masa pinjam → `panjang.php`
+  * Pengembalian buku → `kembali.php`
+
+### 4. Log Aktivitas
+
+* Navigasi:
+
+  * Log peminjaman → `log_pinjam.php`
+  * Log pengembalian → `log_kembali.php`
+
+### 5. Laporan
+
+* Navigasi: `laporan/laporan_sirkulasi.php`
+* Cetak laporan → `print_laporan.php`
+
+### 6. Manajemen Pengguna *(Admin Saja)*
+
+* Navigasi: `admin/pengguna/data_pengguna.php`
+* Aksi:
+
+  * Tambah pengguna → `add_pengguna.php`
+  * Edit pengguna → `edit_pengguna.php`
+  * Hapus pengguna → `del_pengguna.php`
+
+---
+
+## 🧾 Struktur Data Utama
+
+| Tabel          | Keterangan                                        |
+| -------------- | ------------------------------------------------- |
+| `tb_buku`      | Menyimpan data buku: kode, judul, pengarang, dll. |
+| `tb_anggota`   | Menyimpan data anggota perpustakaan.              |
+| `tb_sirkulasi` | Data transaksi peminjaman dan pengembalian buku.  |
+| `tb_pengguna`  | Menyimpan akun login dan hak akses.               |
+| `tb_log`       | Riwayat peminjaman & pengembalian.                |
+
+---
+
+## 🖼 Catatan Tambahan
+
+* File gambar (jika digunakan) diletakkan di folder `assets/img/`
+* File PDF hasil cetak disusun menggunakan library seperti mPDF / FPDF
+* Session digunakan untuk login: pastikan sesi aktif untuk mengakses halaman admin
+
+---
+
+📌 Untuk proses instalasi lokal, lihat [docs/INSTALLATION.md](INSTALLATION.md)
+📌 Untuk ringkasan fitur & struktur folder, buka [README.md](../README.md)

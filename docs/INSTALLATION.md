@@ -1,103 +1,126 @@
-## 📥 INSTALLATION.md
+## 🛠 INSTALLATION GUIDE – Sistem Informasi Perpustakaan
 
-# Panduan Instalasi
-
-Sistem Informasi Perpustakaan Berbasis Web
-
-Dokumen ini menjelaskan langkah-langkah untuk menginstal dan menjalankan aplikasi perpustakaan secara lokal menggunakan XAMPP.
+Dokumen ini berisi langkah-langkah untuk menginstal dan menjalankan aplikasi web "Sistem Informasi Perpustakaan" secara lokal di komputer Anda.
 
 ---
 
-## 🧾 Persyaratan Sistem
+## 📋 Persyaratan Sistem
 
-* Web Server: [XAMPP](https://www.apachefriends.org/) (disarankan versi PHP 7.4+)
-* Browser modern: Chrome, Firefox, atau Edge
-* Editor teks (opsional): VS Code, Sublime Text
+Pastikan Anda telah menginstal software berikut:
+
+| ---------- | -------------------------------------- |
+| Komponen   | Versi Minimum                          |
+| ---------- | -------------------------------------- |
+| PHP        | 7.4 atau lebih baru                    |
+| MySQL      | 5.7 atau lebih baru                    |
+| Web Server | Apache (XAMPP / Laragon / LAMP)        |
+| Browser    | Modern Browser (Chrome, Edge, Firefox) |
+| ---------- | -------------------------------------- |
 
 ---
 
-## 📦 Struktur Folder Proyek
-
-Pastikan folder aplikasi seperti ini setelah ekstrak atau clone:
+## 📁 Struktur Direktori Utama
 
 ```
 PERPUSTAKAAN/
 │
-├── admin/
-├── assets/
-├── build/
-├── dist/
-├── home/
-├── inc/
-├── plugins/
-├── data_perpus.sql
-├── index.php
-├── login.php
-├── logout.php
+├── src/
+│   ├── admin/
+│   │   ├── agt/
+│   │   ├── buku/
+│   │   ├── laporan/
+│   │   ├── log/
+│   │   ├── pengguna/
+│   │   └── sirkul/
+│   ├── assets/
+│   ├── build/
+│   ├── dist/
+│   ├── home/
+│   ├── inc/
+│   ├── plugins/
+│   ├── index.php
+│   ├── login.php
+│   └── logout.php
+│
+├── sql/
+│   └── data_perpus.sql
+│
+├── docs/
+│   └── INSTALLATION.md
+│
 └── README.md
 ```
 
 ---
 
-## ⚙️ Langkah Instalasi
+## 🔌 Langkah Instalasi
 
-### 1. Pindahkan Folder ke `htdocs`
+### 1. Clone atau Unduh Proyek
 
-Salin folder `PERPUSTAKAAN/` ke dalam direktori:
+Salin folder `PERPUSTAKAAN/` ke direktori `htdocs` milik XAMPP Anda.
 
 ```
-C:\xampp\htdocs
+C:\xampp\htdocs\PERPUSTAKAAN
 ```
 
-### 2. Aktifkan Apache & MySQL
+### 2. Setup Database
 
-Buka **XAMPP Control Panel**, lalu:
+* Jalankan XAMPP Control Panel, aktifkan **Apache** dan **MySQL**.
+* Akses `http://localhost/phpmyadmin`
+* Buat database baru dengan nama: `data_perpus`
+* Import file `sql/data_perpus.sql`
 
-* Klik **Start** pada **Apache**
-* Klik **Start** pada **MySQL**
+### 3. Konfigurasi Koneksi Database
 
-### 3. Buat Database
-
-1. Akses `http://localhost/phpmyadmin`
-2. Klik **Database > Buat database baru**
-
-   * Nama: `data_perpus`
-   * Kolasi: `utf8_general_ci`
-3. Klik **Import**
-
-   * Pilih file `data_perpus.sql`
-   * Klik **Go**
-
-### 4. Konfigurasi Koneksi
-
-Buka file: `inc/koneksi.php`
-
-Pastikan pengaturannya seperti ini:
+Edit file `src/inc/koneksi.php` dan sesuaikan kredensial sesuai server Anda:
 
 ```php
 $host = "localhost";
 $user = "root";
-$pass = ""; // default kosong jika tidak diubah
+$pass = "1234"; // ubah sesuai password MySQL Anda
 $db   = "data_perpus";
+```
+
+### 4. Jalankan Aplikasi
+
+Buka browser dan akses:
+
+```
+http://localhost/PERPUSTAKAAN/
 ```
 
 ---
 
-## ✅ Akses Aplikasi
+## 🔐 Login Akun Default
 
-1. Buka browser dan akses: `http://localhost/PERPUSTAKAAN/`
-2. Masukkan login:
-
-   * **Username**: `salmaaa`
-   * **Password**: `123`
-3. Anda akan diarahkan ke Dashboard Administrator
+| Role          | Username | Password |
+| ------------- | -------- | -------- |
+| Administrator | salmaaa  | 123      |
 
 ---
 
-## 📌 Catatan Tambahan
+## 📸 Tampilan Aplikasi
 
-* Gunakan VS Code untuk pengelolaan file lebih rapi.
-* Simpan database berkala sebagai backup.
-* Pastikan koneksi ke internet aktif jika menggunakan CDN eksternal.
+* Desain responsif cocok untuk desktop dan tablet.
+* Warna dominan: merah, kuning, hijau, biru, putih.
+* Menggunakan Bootstrap dan SweetAlert.
 
 ---
+
+## ⚡ Masalah Umum
+
+1. **Halaman kosong** → Pastikan PHP ≥ 7.4 dan `display_errors` aktif di php.ini.
+2. **Database tidak terkoneksi** → Cek kembali file `koneksi.php`.
+3. **Gagal login** → Pastikan username & password sesuai.
+
+---
+
+## ☎ Kontak Developer
+
+| ------------ | ------------------ |
+| Nama Lengkap | Salma Diani Putri  |
+| ------------ | ------------------ |
+| NIM          | 202312025          |
+| Jurusan      | Teknik Informatika |
+| Instansi     | STITEK Bontang     |
+| ------------ | ------------------ |
