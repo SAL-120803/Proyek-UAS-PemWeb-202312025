@@ -69,7 +69,7 @@ Digunakan untuk autentikasi pengguna aplikasi (admin/petugas).
 ## 🗂 ERD Visual
 
 Berikut adalah diagram relasi antar tabel:
-![ERD Perpustakaan](docs/ERD_Perpustakaan.png)
+![ERD Perpustakaan](./ERD_Perpustakaan.png)
 
 > *Catatan: Gambar di atas dibuat menggunakan [dbdiagram.io](https://dbdiagram.io)*
 
