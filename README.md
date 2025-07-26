@@ -27,15 +27,15 @@ Sistem Informasi Perpustakaan adalah aplikasi web berbasis PHP native dan MySQL 
 
 ---
 
-## 🗂 Struktur Folder
-
-```
+## 📂 Struktur Folder
 
 PERPUSTAKAAN/
 │
 ├── README.md                # Dokumentasi utama proyek
 │
 ├── docs/                    # Dokumentasi tambahan
+│   ├── ERD_perpustakaan.png
+│   ├── ERD.md
 │   ├── INSTALLATION.md
 │   └── USAGE.md
 │
@@ -132,8 +132,6 @@ PERPUSTAKAAN/
     ├── index.php            # Redirect ke halaman utama
     ├── login.php            # Login
     └── logout.php           # Logout
-
-````
 
 ---
 
