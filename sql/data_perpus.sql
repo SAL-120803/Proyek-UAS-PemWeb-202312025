@@ -1,9 +1,10 @@
+
 -- phpMyAdmin SQL Dump
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Jun 2020 pada 06.17
+-- Waktu pembuatan: 20 Juli 2025 pada 08.45
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.2.12
 
@@ -40,10 +41,10 @@ CREATE TABLE `log_pinjam` (
 --
 
 INSERT INTO `log_pinjam` (`id_log`, `id_buku`, `id_anggota`, `tgl_pinjam`) VALUES
-(1, 'B001', 'A001', '2020-06-23'),
-(2, 'B002', 'A001', '2020-06-25'),
-(3, 'B003', 'A002', '2020-06-01'),
-(4, 'B002', 'A005', '2020-06-23');
+(1, 'B001', 'A001', '2025-07-20'),
+(2, 'B002', 'A001', '2025-07-21'),
+(3, 'B003', 'A002', '2025-07-22'),
+(4, 'B002', 'A005', '2025-07-23');
 
 -- --------------------------------------------------------
 
@@ -64,11 +65,10 @@ CREATE TABLE `tb_anggota` (
 --
 
 INSERT INTO `tb_anggota` (`id_anggota`, `nama`, `jekel`, `kelas`, `no_hp`) VALUES
-('A001', 'Ana', 'Perempuan', 'juwana', '089987789000'),
-('A002', 'Bagus', 'Laki-laki', 'demak', '089987789098'),
-('A003', 'Citra', 'Perempuan', 'demak', '085878526048'),
-('A004', 'Didik', 'Laki-laki', 'pati', '087789987654'),
-('A005', 'Edi', 'Laki-laki', 'demak', '089987789098');
+('A001', 'Salma', 'Perempuan', 'Semester 4', '081242542583'),
+('A002', 'chandalallo pasapan', 'Perempuan', 'Semester 4', '087382649364'),
+('A003', 'vilea', 'Perempuan', 'Semester 4', '088693672394'),
+('A004', 'Maharani Putri', 'Perempuan', 'Semester 4', '084683947347'),
 
 -- --------------------------------------------------------
 
@@ -89,11 +89,10 @@ CREATE TABLE `tb_buku` (
 --
 
 INSERT INTO `tb_buku` (`id_buku`, `judul_buku`, `pengarang`, `penerbit`, `th_terbit`) VALUES
-('B001', 'Matematika', 'anastasya', 'armi print', 2010),
-('B002', 'RPL 2', 'Eko', 'UMK', 2020),
-('B003', 'C++', 'Anton', 'Toni Perc', 2010),
-('B004', 'CI 4', 'anastasya', 'armi print', 2009),
-('B005', 'Data Mining', 'Anton', 'Toni Perc', 2020);
+('B001', 'Pemrograman Web', 'Vilea', 'Nadin Amizah', 2024),
+('B002', 'Butterfly', 'Maharani', 'Pras Teguh', 2025),
+('B003', 'Power Rangers', 'Chandalallo', 'Arni Print', 2023),
+('B004', 'Jaringan Komputer', 'Amel', 'Stitek', 2022),
 
 -- --------------------------------------------------------
 
@@ -114,8 +113,7 @@ CREATE TABLE `tb_pengguna` (
 --
 
 INSERT INTO `tb_pengguna` (`id_pengguna`, `nama_pengguna`, `username`, `password`, `level`) VALUES
-(1, 'M ivan S', 'admin',md5('123'), 'Administrator'),
-(5, 'Mivan', 'ivan','123', 'Administrator');
+(1, 'Salma Diani Putri', 'salmaaa',md5('123'), 'Administrator'),
 
 -- --------------------------------------------------------
 
@@ -137,10 +135,8 @@ CREATE TABLE `tb_sirkulasi` (
 --
 
 INSERT INTO `tb_sirkulasi` (`id_sk`, `id_buku`, `id_anggota`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
-('S001', 'B001', 'A001', '2020-06-23', '2020-06-30', 'KEM'),
-('S002', 'B002', 'A001', '2020-06-13', '2020-06-20', 'PIN'),
-('S003', 'B003', 'A002', '2020-06-22', '2020-06-29', 'PIN'),
-('S004', 'B002', 'A005', '2020-06-23', '2020-06-30', 'PIN');
+('S004', 'B004', 'A003', '2025-07-14', '2020-07-21', 'KEM'),
+('S005', 'B002', 'A004', '2025-06-15', '2020-06-22', 'PIN');
 
 --
 -- Indexes for dumped tables
