@@ -1,5 +1,3 @@
-
-```markdown
 # 📚 Sistem Informasi Perpustakaan - Aplikasi Web Manajemen Perpustakaan
 
 Sistem Informasi Perpustakaan adalah aplikasi web berbasis PHP native dan MySQL yang dirancang untuk membantu pengelolaan kegiatan perpustakaan secara digital. Proyek ini mendukung manajemen data buku, anggota, peminjaman, pengembalian, serta laporan sirkulasi. Sistem dilengkapi dengan antarmuka sederhana dan responsif menggunakan Bootstrap serta notifikasi interaktif dari SweetAlert.
