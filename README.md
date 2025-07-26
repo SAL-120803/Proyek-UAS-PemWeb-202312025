@@ -6,6 +6,13 @@ Sistem Informasi Perpustakaan adalah aplikasi web berbasis PHP native dan MySQL 
 
 ---
 
+## 🧪 Demo 
+ 
+> [🔗 Tonton Demo di Youtube]()
+> [🔗 Kunjungi Website Demo]()
+
+---
+
 ## 📌 Fitur Utama
 
 |------------------|-----------------------------------------------------------------------|
@@ -230,13 +237,6 @@ PERPUSTAKAAN/
 - 🎨 Warna dominan: Merah, kuning, hijau, biru dan putih
 - 📱 Desain responsif, cocok untuk desktop dan tablet
 - ✅ Notifikasi interaktif dengan SweetAlert
-
----
-
-## 🧪 Demo 
- 
-> [🔗 Tonton Demo di Youtube]()
-> [🔗 Kunjungi Website Demo]()
 
 ---
 
